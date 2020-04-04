@@ -154,7 +154,7 @@ def main():
                              custom_objects=custom_objects)
     
     # Data loading
-    in_volume = load_volume(img_path, expand_dims=True)
+    in_volume = load_volume(img_path, expand_dims=False)
 
     # Prediction and Reconstruction
     predictions = TiledPredictor(
@@ -169,7 +169,7 @@ def main():
     save_volume(
         volume=predictions.out_volume[:,:,:,0],
         out_path=out_path,
-        filename=img_path.name,
+        filename=img_path.stem,
     )
 
     # Calculating performances on test dataset
@@ -186,7 +186,7 @@ def main():
         log_dir_path=logs_path,
         input_data_path=img_path,
         script_options=vars(args),
-        git_repo=git.Repo(),
+        git_repo=git.Repo(".."),
         notes=args.notes,
         predictions_path=out_path,
         ground_truth_path=gt_path,

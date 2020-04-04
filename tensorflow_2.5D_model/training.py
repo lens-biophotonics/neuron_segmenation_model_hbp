@@ -335,7 +335,7 @@ def main():
     model.save(str(final_model_path))
     
     
-    test_frames = load_volume(test_frames_path, expand_dims=True)
+    test_frames = load_volume(test_frames_path, expand_dims=False)
     test_masks = load_volume(test_masks_path, expand_dims=False)
     
     test_predictor = TiledPredictor(input_volume=test_frames,
@@ -366,7 +366,7 @@ def main():
         dataset_path=dataset_path,
         epochs=args.epochs,
         model_history_dict=model_history.history,
-        git_repo=git.Repo(),
+        git_repo=git.Repo(".."),
         callback_list=callback_list,
         script_options=vars(args),
         log_dir_path=logs_path,

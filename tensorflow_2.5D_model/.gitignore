@@ -1,7 +1,0 @@
-*.pyc
-*.save
-*.png
-notebooks/model.png
-__pycache__/
-.ipynb_checkpoints/
-/wandb/

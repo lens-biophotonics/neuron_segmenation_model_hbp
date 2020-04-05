@@ -7,3 +7,4 @@ scikit-learn
 scipy
 tifffile
 gitpython
+pyyaml

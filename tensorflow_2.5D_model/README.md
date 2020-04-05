@@ -26,9 +26,12 @@ If you're using Anaconda you can use the included configuration file to automati
 This will create a new env called `neuron_segmentation` in which you can execute the code in this repo.
 
 ## Basic Usage
-You can find two main scripts to be used
+The two main scripts that are needed for basic usage are
 - `training.py`
 - `predict.py`
+
+that are used, respectively for the training and inference phase.
+
 ### Model training
  You can train a new model using the `training.py` script.
  The training algorithm accepts input data formatted as multipage `.tif`that need to be placed in the same directory and named as follows:
@@ -49,6 +52,7 @@ For a typical training session you need to specify
 - training batch size with `-b`
 
  The resulting training command will be
+ 
 `python training.py -d /home/phil/dataset -o /home/phil/training_run -e 100 -b 50`
 
 Writing long sequence of arguments in the CLI can be tedious and error-prone, you can avoid re-specifiyng arguments everytime by using a simple configuration file.
@@ -62,11 +66,13 @@ We can create a config file for the above run as simply as
 -b 50
 ```
 and then load the arguments by using the `--file` special argument
+
 `python training.py --file config_file`
 
 You can override config file arguments by re-specifying them when calling the script, this can result handy when performing multiple training session while changing only some of the parameters :
 
 `python training.py --file config_file -e 200`
+
 this command would run for 200 epochs instead of the 100 defined in the config file. 
 
 
@@ -98,9 +104,15 @@ Lastly, you can run trained models on a stack of images by using a multipage `.t
 - Instance segmentation integration
 - `tensorflow 2.1` support
 ## Contacts
+
 **Author:**
+
 Filippo Maria Castelli
+
 castelli@lens.unifi.it
+
 LENS, European Laboratory for Non-linear Spectroscopy  
+
 Via Nello Carrara 1  
+
 50019 Sesto Fiorentino (FI), Italy

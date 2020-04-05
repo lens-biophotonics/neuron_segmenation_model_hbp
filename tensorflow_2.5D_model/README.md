@@ -107,12 +107,8 @@ Lastly, you can run trained models on a stack of images by using a multipage `.t
 
 **Author:**
 
-Filippo Maria Castelli
-
-castelli@lens.unifi.it
-
+Filippo Maria Castelli  
+castelli@lens.unifi.it  
 LENS, European Laboratory for Non-linear Spectroscopy  
-
 Via Nello Carrara 1  
-
 50019 Sesto Fiorentino (FI), Italy

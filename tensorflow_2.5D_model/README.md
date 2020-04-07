@@ -69,23 +69,23 @@ and then load the arguments by using the `--file` special argument
 
 `python training.py --file config_file`
 
-You can override config file arguments by re-specifying them when calling the script, this can result handy when performing multiple training session while changing only some of the parameters :
+You can override config file arguments by re-specifying them when calling the script, this can result handy when performing multiple training session while changing only some of the parameters :  
 
 `python training.py --file config_file -e 200`
-
+  
 this command would run for 200 epochs instead of the 100 defined in the config file. 
 
 
-Note that these are not the only usable parameters: you can find in-depth details on all the possible arguments by using the `--help` option
+Note that these are not the only usable parameters: you can find in-depth details on all the possible arguments by using the `--help` option  
 `python training.py --help`
 
 ### Inference on new images
 Model inference can be done using the `predict.py` script.
 This algorithm incorporates a tiled prediction strategy (You can find details in`tp2d.py`) that allows for inference on arbitrary-sized input inference, regardless of the shape of the receptive field of the trained model.
 
-For a typical prediction run would need to specify
-- path to the image you want to make inference on, with the `-i` argument
-- output path with `-o`
+For a typical prediction run you would need to specify
+- the path to the image you want to make inference on, with the `-i` argument
+- the output path, with the `-o` parameter
 - which trained model you want to use, with `-m`
 
 `python predict.py -i /home/phil/dataset/test.tif -o /home/phil/prediction_run -m /home/phil/training_run/weights.100.hdf5`
